@@ -1,8 +1,7 @@
-// Smooth scrolling for navbar links
 document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.navbar a');
 
-    navLinks.for(function (link) {
+    navLinks.forEach(function (link) {
         link.addEventListener('click', function (e) {
             e.preventDefault();
 
@@ -16,9 +15,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    // Automatically play videos
+    document.querySelectorAll('.card-video').forEach(video => {
+        video.play();
+    });
 });
 
-// Your existing Three.js and video hover play/pause code here
+// Your existing Three.js code
 import * as THREE from 'three';
 import { GLTFLoader } from 'jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'jsm/loaders/DRACOLoader.js';
@@ -92,8 +96,3 @@ function animate() {
 // Initialize the scene with the specified container ID and model path
 init('three-container', '3dmodels/particleLogo.glb');
 animate();
-
-// Add video hover play/pause behavior
-document.querySelectorAll('.card-video').forEach(video => {
-    video.addEventListener('mouseenter', () => video.play());
-});
