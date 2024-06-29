@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Particle</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+            "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+        }
+    }
+  </script>
+  <style>
+    /* Additional styles for smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+          <li><a href="#Home-Main">Home</a></li>
+          <li><a href="Evolute.html">Evolute</a></li>
+          <li><a href="#Home-Categories">Products</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+    </nav>
+
+    <div id="Home-Main" class="Home-Main fade-in">
+        <div class="Background-Illuminate" id="three-container"></div>
+    </div>
+
+    <div class="Red-Line"></div>
+  
+    <div id="Home-Categories" class="Home-Categories">
+        <div class="card">
+            <video class="card-video" muted loop>
+                <source src="Videos/ne-phone.mp4" type="video/mp4">
+            </video>
+            <div class="card-content">
+                <h2>Phone 0.1</h2>
+                <p>The 0.1 is a mixture of efficiency and performance, moulded into a stylish and sleek design... </p>
+                <div class="button-container">
+                    <a href="#" class="button">Click here to know more</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <video class="card-video" muted loop>
+                <source src="Videos/Evolute.mp4" type="video/mp4">
+            </video>
+            <div class="card-content">
+                <h2>Portable Beast</h2>
+                <p>The Evolute features a very slim design, packed with performance equivalent to...</p>
+                <div class="button-container">
+                    <a href="Evolute.html" class="button">Click here to know more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    
+    <script type="module" src="home.js"></script>
+</body>
+</html>
