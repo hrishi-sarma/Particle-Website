@@ -17,8 +17,8 @@ function init(containerId, modelPath) {
     document.getElementById(containerId).appendChild(renderer.domElement);
 
     // Add lighting
-    const light = new THREE.DirectionalLight(0xffffff, 2);
-    light.position.set(3, 0, 0).normalize();
+    const light = new THREE.DirectionalLight(0xffffff, 5);
+    light.position.set(3, 2, 0).normalize();
     scene.add(light);
 
     // Load the GLTF model
