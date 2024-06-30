@@ -21,6 +21,10 @@ function init(containerId, modelPath) {
     light.position.set(3, 2, 0).normalize();
     scene.add(light);
 
+    
+
+    
+
     // Load the GLTF model
     const loader = new GLTFLoader();
     loader.load(modelPath, function (gltf) {
@@ -28,7 +32,7 @@ function init(containerId, modelPath) {
 
         // Position and scale the model
         model.position.set(0, 0, -1);
-        model.rotation.set(0, 0, 0.5);
+        model.rotation.set(0, 0, -0.2);
         model.scale.set(1, 1, 1); // Adjust the scale values as needed
         scene.add(model);
     }, undefined, function (error) {
@@ -51,11 +55,12 @@ function animate() {
     // Rotate the model
     if (model) {
         model.rotation.y += 0.005; // Adjust the rotation speed as needed
+        
     }
 
     renderer.render(scene, camera);
 }
 
 // Initialize the scene with the specified container ID and model path
-init('three-container', '3dmodels/particlephone.glb');
+init('three-container', '3dmodels/phoneee.glb');
 animate();
