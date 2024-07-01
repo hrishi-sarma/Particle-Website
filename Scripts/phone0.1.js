@@ -62,5 +62,5 @@ function animate() {
 }
 
 // Initialize the scene with the specified container ID and model path
-init('three-container', '3dmodels/phoneee.glb');
+init('three-container', '3dmodels/betterlaptop.glb');
 animate();
