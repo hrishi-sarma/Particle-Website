@@ -17,13 +17,9 @@ function init(containerId, modelPath) {
     document.getElementById(containerId).appendChild(renderer.domElement);
 
     // Add lighting
-    const light = new THREE.DirectionalLight(0xffffff, 5);
-    light.position.set(3, 2, 0).normalize();
+    const light = new THREE.DirectionalLight(0xffffff, 2);
+    light.position.set(3, 0, 0).normalize();
     scene.add(light);
-
-    
-
-    
 
     // Load the GLTF model
     const loader = new GLTFLoader();
@@ -31,8 +27,8 @@ function init(containerId, modelPath) {
         model = gltf.scene;
 
         // Position and scale the model
-        model.position.set(0, 0, -1);
-        model.rotation.set(0, 0, -0.2);
+        model.position.set(2, -1, 1);
+        model.rotation.set(0, -1, 0);
         model.scale.set(1, 1, 1); // Adjust the scale values as needed
         scene.add(model);
     }, undefined, function (error) {
@@ -55,7 +51,6 @@ function animate() {
     // Rotate the model
     if (model) {
         model.rotation.y += 0.005; // Adjust the rotation speed as needed
-        
     }
 
     renderer.render(scene, camera);
