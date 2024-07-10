@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'jsm/loaders/GLTFLoader.js';
 
-let scene, camera, renderer, model;
+let scene, camera, renderer, model, mixer;
 
 function init(containerId, modelPath) {
     // Create the scene
@@ -18,8 +18,10 @@ function init(containerId, modelPath) {
 
     // Add lighting
     const light = new THREE.DirectionalLight(0xffffff, 2);
-    light.position.set(3, 0, 0).normalize();
+    light.position.set(3, 3, 0);
     scene.add(light);
+
+
 
     // Load the GLTF model
     const loader = new GLTFLoader();
@@ -27,10 +29,11 @@ function init(containerId, modelPath) {
         model = gltf.scene;
 
         // Position and scale the model
-        model.position.set(2, -1, 1);
-        model.rotation.set(0, -1, 0);
-        model.scale.set(1, 1, 1); // Adjust the scale values as needed
+        model.position.set(3.5, 0, 0);
+        model.rotation.set(0, 0.5, 0);
+        model.scale.set(0.75, 0.75, 0.75); // Adjust the scale values as needed
         scene.add(model);
+
     }, undefined, function (error) {
         console.error(error);
     });
@@ -45,17 +48,19 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
+
+
+
 function animate() {
     requestAnimationFrame(animate);
 
+
     // Rotate the model
-    if (model) {
-        model.rotation.y += 0.005; // Adjust the rotation speed as needed
-    }
+    
 
     renderer.render(scene, camera);
 }
 
 // Initialize the scene with the specified container ID and model path
-init('three-container', '3dmodels/betterlaptop.glb');
+init('three-container', '3dmodels/phonee.glb');
 animate();

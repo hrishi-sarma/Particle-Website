@@ -31,9 +31,9 @@ function init(containerId, modelPath) {
         model = gltf.scene;
 
         // Position and scale the model
-        model.position.set(0, 0, -1);
+        model.position.set(0, -1.5, -1);
         model.rotation.set(0, 0, -0.2);
-        model.scale.set(1, 1, 1); // Adjust the scale values as needed
+        model.scale.set(2, 2, 2); // Adjust the scale values as needed
         scene.add(model);
     }, undefined, function (error) {
         console.error(error);
